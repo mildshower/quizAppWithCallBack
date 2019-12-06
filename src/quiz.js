@@ -1,27 +1,33 @@
 const { stdin, stdout } = process;
 const { Say } = require("say");
 const chalk = require("chalk");
+const { startBorderAnimation } = require("./design");
 const { printAt, clearScreen } = require("./utils");
 const { getQuestions } = require("./getQuestions");
+const { runOpeningAnimation } = require("./open");
 
 const say = new Say();
 stdin.setEncoding("utf-8");
 
 const getTimer = function() {
   return {
-    counter: 10,
+    counter: 20,
     timerId: 0,
     start: function() {
-      clearInterval(this.timerId);
-      this.counter = 10;
+      this.stop();
       this.timerId = setInterval(() => {
-        printAt(`Seconds Remaining: ${this.counter}`, 30, stdout.rows - 4);
+        printAt(
+          chalk.blue(`◼︎ Seconds Remaining: ${this.counter}`),
+          20,
+          stdout.rows - 3
+        );
         if (this.counter == 0) stdin.emit("data", "\r");
         this.counter--;
       }, 1 * 1000);
     },
     stop: function() {
       clearInterval(this.timerId);
+      this.counter = 20;
     }
   };
 };
@@ -105,7 +111,7 @@ const handleEachKeyPress = function(calculateScore, timer, pressedKey) {
   }
 };
 
-const showOpenig = function() {
+const showStartKeyToPress = function() {
   clearScreen();
   const initiationMsg = "press enter to start";
   printAt(
@@ -116,12 +122,18 @@ const showOpenig = function() {
   say.speak(initiationMsg, "Samantha");
 };
 
-const runQuiz = function() {
-  showOpenig();
+const startQuiz = function() {
+  showStartKeyToPress();
   const calculateScore = getScoreCalculator();
   const timer = getTimer();
   stdin.setRawMode(true);
   stdin.on("data", handleEachKeyPress.bind(null, calculateScore, timer));
 };
 
-runQuiz();
+const startApp = function() {
+  startBorderAnimation();
+  runOpeningAnimation();
+  setTimeout(startQuiz, 5500);
+};
+
+startApp();

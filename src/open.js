@@ -4,17 +4,17 @@ const { intervalCall, spaces, printAt, clearScreen } = require("./utils.js");
 const { Say } = require("say");
 const say = new Say();
 
-const getLoadBar = function(xAxis, yAxis) {
-  return function() {
-    stdout.cursorTo(xAxis, yAxis);
-    stdout.write(chalk.redBright.bold("◼︎"));
-    xAxis++;
-  };
+const startCountDown = function(startColumn, startRow) {
+  const digitDisplayerFuncs = [show3, show2, show1];
+  let count = 0;
+  const timerID = setInterval(() => {
+    digitDisplayerFuncs[count](startRow + 7, startColumn + 32);
+    if (count == 2) clearInterval(timerID);
+    count++;
+  }, 1500);
 };
 
-const showIcon = async function() {
-  const startColumn = Math.ceil(stdout.columns / 2 - 36);
-  const startRow = Math.ceil(stdout.rows / 2 - 5);
+const showIcon = function(startColumn, startRow) {
   clearScreen();
   say.speak("welcome to quiz app", "Samantha");
   printAt(
@@ -59,16 +59,9 @@ const showIcon = async function() {
     startColumn,
     startRow + 5
   );
-  printAt(
-    chalk.blueBright.bold("[" + spaces(26) + "]"),
-    startColumn + 22,
-    startRow + 8
-  );
-  await intervalCall(getLoadBar(startColumn + 23, startRow + 8), 100, 26);
 };
 
 const show3 = function(row, column) {
-  clearScreen();
   say.speak("three", "Samantha");
   printAt(chalk.redBright.bold("||||||||"), column, row++);
   printAt(chalk.redBright.bold("     |||"), column, row++);
@@ -80,7 +73,6 @@ const show3 = function(row, column) {
 };
 
 const show2 = function(row, column) {
-  clearScreen();
   say.speak("two", "Samantha");
   printAt(chalk.yellowBright.bold("||||||||"), column, row++);
   printAt(chalk.yellowBright.bold("||   ///"), column, row++);
@@ -92,7 +84,6 @@ const show2 = function(row, column) {
 };
 
 const show1 = function(row, column) {
-  clearScreen();
   say.speak("one", "Samantha");
   printAt(chalk.greenBright.bold("///|||  "), column, row++);
   printAt(chalk.greenBright.bold("   |||  "), column, row++);
@@ -103,13 +94,11 @@ const show1 = function(row, column) {
   printAt(chalk.greenBright.bold("||||||||"), column, row++);
 };
 
-const countDown = async function() {
-  const startRow = Math.ceil(stdout.rows / 2 - 4);
-  const startColumn = Math.ceil(stdout.columns / 2 - 23);
-  await intervalCall(show3, 1000, 1, startRow, startColumn);
-  await intervalCall(show2, 1000, 1, startRow, startColumn + 18);
-  await intervalCall(show1, 1000, 1, startRow, startColumn + 36);
+const runOpeningAnimation = function() {
+  const startColumn = Math.ceil(stdout.columns / 2 - 36);
+  const startRow = Math.ceil(stdout.rows / 2 - 5);
+  showIcon(startColumn, startRow);
+  startCountDown(startColumn, startRow);
 };
 
-exports.showIcon = showIcon;
-exports.countDown = countDown;
+exports.runOpeningAnimation = runOpeningAnimation;

@@ -101,7 +101,7 @@ const getVerLineLeft1 = loadVerticalLine(-1, -1, -1, 2, stdout.rows - 3, 3, -2);
 
 const getVerLineLeft2 = loadVerticalLine(-1, -1, -1, 0, stdout.rows - 4, 2, -2);
 
-const mainInterval = function() {
+const startBorderAnimation = function() {
   setInterval(() => {
     getHorLineTop1();
     getHorLineTop2();
@@ -114,4 +114,4 @@ const mainInterval = function() {
   }, 50);
 };
 
-exports.mainInterval = mainInterval;
+exports.startBorderAnimation = startBorderAnimation;
