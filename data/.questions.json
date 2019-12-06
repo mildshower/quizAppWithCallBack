@@ -1,0 +1,367 @@
+[
+  {
+    "question": "What was Sachin Tendulkar's highest score in all international cricket?",
+    "options": { "a": "248*", "b": "245", "c": "257", "d": "314*" },
+    "answer": "a"
+  },
+  {
+    "question": "How old was Sachin Tendulkar when he made his international debut?",
+    "options": { "a": "18", "b": "15", "c": "16", "d": "17" },
+    "answer": "c"
+  },
+  {
+    "question": "Which of the following Indian players has played the most Test innings without being dismissed for a duck?",
+    "options": {
+      "a": "S C Ganguly",
+      "b": "S R Tendulkar",
+      "c": "R Dravid ",
+      "d": "S Gavaskar"
+    },
+    "answer": "b"
+  },
+  {
+    "question": "In which year were the World Cup matches reduced to 50 overs from the previous 60 overs?",
+    "options": { "a": "1983", "b": "1987", "c": "1992", "d": "2011" },
+    "answer": "b"
+  },
+  {
+    "question": "For how many days is a Test match scheduled?",
+    "options": { "a": "5", "b": "6", "c": "3", "d": "1" },
+    "answer": "a"
+  },
+  {
+    "question": "Who was the first bowler to pick up a hat-trick in World Cups?",
+    "options": {
+      "a": "Chetan Sharma",
+      "b": "Saqlain Mushtaq",
+      "c": "M. Murlidharan",
+      "d": "Ajanta Mendis"
+    },
+    "answer": "a"
+  },
+  {
+    "question": "Which bowler has taken three ODI hatricks?",
+    "options": {
+      "a": "A Kumble",
+      "b": "M Shami",
+      "c": "S Warne",
+      "d": "L Malinga"
+    },
+    "answer": "d"
+  },
+  {
+    "question": "Who invented C Language?",
+    "options": {
+      "a": "James A Gosling",
+      "b": "Dennis Ritchie",
+      "c": "Guido van Rossum",
+      "d": "Brendan Eich"
+    },
+    "answer": "b"
+  },
+  {
+    "question": "What is the full form of WWW?",
+    "options": {
+      "a": "whar when who",
+      "b": "Washingtoon Wide Web",
+      "c": "world wide web",
+      "d": "world wide war"
+    },
+    "answer": "c"
+  },
+  {
+    "question": "Who is the only bowler to take 10 wickets in an innings?",
+    "options": {
+      "a": "A Kumble",
+      "b": "Zaheer Khan",
+      "c": "M Murlidharan",
+      "d": "I Pathan"
+    },
+    "answer": "a"
+  },
+  {
+    "question": "When were the first recorded olympics held?",
+    "options": { "a": "825BC", "b": "776BC", "c": "320BC", "d": "80AD" },
+    "answer": "b"
+  },
+  {
+    "question": "Which of the following region has won the Ranji Trophy tournament 2019?",
+    "options": {
+      "a": "Saurashtra",
+      "b": "Mumbai",
+      "c": "Vidarbha",
+      "d": "Rajasthan"
+    },
+    "answer": "c"
+  },
+  {
+    "question": "Which of the following statement is not correct about ICC World Cup 2019?",
+    "options": {
+      "a": "It was the 12th edition of the ICC cricket World Cup",
+      "b": "Rohit Sharma has scored 6 centuries in this tournament",
+      "c": "Australia Mitchell Starc was the leading wicket taker in the tournament",
+      "d": "Mohammad Shami and Trent Boult took the hat trick in this tournament"
+    },
+    "answer": "b"
+  },
+  {
+    "question": "Which of the following trophy/ is not related to Cricket in India?",
+    "options": {
+      "a": "Syed Mushtaq Ali Trophy",
+      "b": "Deodhar Trophy",
+      "c": "Santosh Trophy",
+      "d": "Duleep Trophy"
+    },
+    "answer": "c"
+  },
+  {
+    "question": "Who has won the Rajiv Gandhi Khel Ratna Award 2019?",
+    "options": {
+      "a": "Sakshi Malik",
+      "b": "Mirabai Chanu",
+      "c": "Bajrang Punia",
+      "d": "None of the above"
+    },
+    "answer": "c"
+  },
+  {
+    "question": "Rabindranath Tagore's 'Jana Gana Mana' has been adopted as India's National Anthem. How many stanzas of the said song were adopted?",
+    "options": {
+      "a": "Only the first stanza",
+      "b": "The whole song",
+      "c": "Third and Fourth stanza",
+      "d": "First and Second stanza"
+    },
+    "answer": "a"
+  },
+  {
+    "question": "Dandia is a popular dance of which State?",
+    "options": {
+      "a": "Punjab",
+      "b": "Gujarat",
+      "c": "Tamil Nadu",
+      "d": "Maharashtra"
+    },
+    "answer": "b"
+  },
+  {
+    "question": "Who did lead The Cuban Revolution ?",
+    "options": {
+      "a": "Rafael Trujillo",
+      "b": "Che Guevara",
+      "c": "Fidel Castro",
+      "d": "Augusto Pinochet"
+    },
+    "answer": "c"
+  },
+  {
+    "question": "Along with Hiroshima, Japan, which Japanese city was hit by an atomic bomb in 1945?",
+    "options": {
+      "a": "Tokyo",
+      "b": "Nagasaki",
+      "c": "Osaka",
+      "d": "Nagoya"
+    },
+    "answer": "b"
+  },
+  {
+    "question": "Who was the first female prime minister of Britain?",
+    "options": {
+      "a": "Florence Nightingale",
+      "b": "Queen Elizabeth II",
+      "c": "Margaret Thatcher",
+      "d": "Jane Austen"
+    },
+    "answer": "c"
+  },
+  {
+    "question": "Who assassinated Abraham Lincoln?",
+    "options": {
+      "a": "Lee Harvey Oswald",
+      "b": "James Earl Ray",
+      "c": "John Wilkes Booth",
+      "d": "Leon Czolgosz"
+    },
+    "answer": "c"
+  },
+  {
+    "question": "Adolf Hitler was the leader of which party?",
+    "options": {
+      "a": "Communist Party",
+      "b": "Nazi Party",
+      "c": "Republican Fascist Party",
+      "d": "none of the above"
+    },
+    "answer": "b"
+  },
+  {
+    "question": "Which continent was devastated by the Black Death in the 1300s?",
+    "options": {
+      "a": "North America",
+      "b": "South America",
+      "c": "Europe",
+      "d": "Africa"
+    },
+    "answer": "b"
+  },
+  {
+    "question": "Mohiniattam dance from developed originally in which state?",
+    "options": {
+      "a": "Tamil Nadu",
+      "b": "Orissa",
+      "c": "Kerala",
+      "d": "Karnataka"
+    },
+    "answer": "c"
+  },
+  {
+    "question": "The Rath Yatra at Puri is celebrated in honour of which Hindu deity?",
+    "options": { "a": "Ram", "b": "Jaganath", "c": "Shiva", "d": "Vishnu" },
+    "answer": "b"
+  },
+  {
+    "question": "Among listed, which is the book of Parsis ?",
+    "options": { "a": "Torah", "b": "Bible", "c": "Zend Avesta", "d": "Gita" },
+    "answer": "c"
+  },
+  {
+    "question": "In which year was The National Anthem first sung ?",
+    "options": { "a": "1911", "b": "1913", "c": "1936", "d": "1935" },
+    "answer": "a"
+  },
+  {
+    "question": "Who composed the famous song 'Sare Jahan SeAchha'?",
+    "options": {
+      "a": "Jaidev",
+      "b": "Mohammad Iqbal",
+      "c": "Bankim Chandra Chattopadhyay",
+      "d": "Rabindranath Tagore"
+    },
+    "answer": "b"
+  },
+  {
+    "question": "In which of the following festivals are boat races a special feature?",
+    "options": {
+      "a": "Onam",
+      "b": "Rongali Bihu",
+      "c": "Navratri",
+      "d": "Pongal"
+    },
+    "answer": "a"
+  },
+  {
+    "question": "The Cold War was between the United States and what other world power?",
+    "options": {
+      "a": "Soviet Union",
+      "b": "Japan",
+      "c": "China",
+      "d": "Canada"
+    },
+    "answer": "a"
+  },
+  {
+    "question": "Where were the first modern Olympics held in 1896?",
+    "options": {
+      "a": "France",
+      "b": "Italy",
+      "c": "Greece",
+      "d": "England"
+    },
+    "answer": "c"
+  },
+  {
+    "question": "Who created the first successful printing press?",
+    "options": {
+      "a": "Nikola Tesla",
+      "b": "Benjamin Franklin",
+      "c": "Henry Ford",
+      "d": "Johannes Gutenberg"
+    },
+    "answer": "d"
+  },
+  {
+    "question": "Which world power sent the first human into space?",
+    "options": {
+      "a": "United States",
+      "b": "France",
+      "c": "Soviet Union",
+      "d": "China"
+    },
+    "answer": "c"
+  },
+  {
+    "question": "In which year did World War I start?",
+    "options": {
+      "a": "1914",
+      "b": "1917",
+      "c": "1921",
+      "d": "1932"
+    },
+    "answer": "a"
+  },
+  {
+    "question": ".MPG extension refers usually to what kind of file?",
+    "options": {
+      "a": "WordPerfect Document file",
+      "b": "MS Office document",
+      "c": "Animation/movie file",
+      "d": "Image file"
+    },
+    "answer": "c"
+  },
+  {
+    "question": "Which was the 1st non Test playing country to beat India in an international match?",
+    "options": {
+      "a": "Canada",
+      "b": "Sri Lanka",
+      "c": "Zimbabwe",
+      "d": "East Africa"
+    },
+    "answer": "b"
+  },
+  {
+    "question": "Who is the first Indian woman to win an Asian Games gold in 400m run?",
+    "options": {
+      "a": "M.L.Valsamma",
+      "b": "P.T.Usha",
+      "c": "Kamaljit Sandhu",
+      "d": "K.Malleshwari"
+    },
+    "answer": "c"
+  },
+  {
+    "question": "In the match between India and Pakistan at Jaipur on 02-10-1983, Which new rule was introduced?",
+    "options": {
+      "a": "Limit of overs was reduced to 50 overs",
+      "b": "The rule of field restriction was taken.",
+      "c": "Over throw runs were batsman's score",
+      "d": "No-balls & wides were debited to bowlers analysis"
+    },
+    "answer": "d"
+  },
+  {
+    "question": "Of which country the bull-fighting is a national game?",
+    "options": { "a": "Spain", "b": "Turkey", "c": "Chili", "d": "Australia" },
+    "answer": "a"
+  },
+  {
+    "question": "What player was the first to win five straight Wimbledon tennis titles?",
+    "options": {
+      "a": "Arthur Ashe",
+      "b": "Andre Agassi",
+      "c": "Roger Federer",
+      "d": "Bjorn Borg"
+    },
+    "answer": "d"
+  },
+  {
+    "question": "In tennis, what follows a deuce?",
+    "options": {
+      "a": "advertisement",
+      "b": "advantage",
+      "c": "advection",
+      "d": "adverb"
+    },
+    "answer": "b"
+  }
+]

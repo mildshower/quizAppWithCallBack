@@ -1,0 +1,28 @@
+{
+  "name": "quizapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "quiz.js",
+  "scripts": {
+    "start": "node quiz.js",
+    "test": "nyc mocha"
+  },
+  "dependencies": {
+    "chalk": "3.0.0",
+    "say": "^0.16.0"
+  },
+  "devDependencies": {
+    "mocha": "6.2.2",
+    "nyc": "14.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mildshower/QuizApp.git"
+  },
+  "author": "Aaquib, MildShower, SukhiBoi, RahitKar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mildshower/QuizApp/issues"
+  },
+  "homepage": "https://github.com/mildshower/QuizApp#readme"
+}
