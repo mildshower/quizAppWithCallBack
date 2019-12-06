@@ -1,11 +1,30 @@
 const { stdin, stdout } = process;
 const { Say } = require("say");
 const chalk = require("chalk");
-const { spaces, printAt, clearScreen } = require("./utils");
+const { printAt, clearScreen } = require("./utils");
 const { getQuestions } = require("./getQuestions");
 
 const say = new Say();
 stdin.setEncoding("utf-8");
+
+const getTimer = function() {
+  return {
+    counter: 10,
+    timerId: 0,
+    start: function() {
+      clearInterval(this.timerId);
+      this.counter = 10;
+      this.timerId = setInterval(() => {
+        printAt(`Seconds Remaining: ${this.counter}`, 30, stdout.rows - 4);
+        if (this.counter == 0) stdin.emit("data", "\r");
+        this.counter--;
+      }, 1 * 1000);
+    },
+    stop: function() {
+      clearInterval(this.timerId);
+    }
+  };
+};
 
 const showOptions = function(options, column, row) {
   const { a, b, c, d } = options;
@@ -59,42 +78,30 @@ const declareScoreAndExit = function(skipped, correct) {
   showScore(attempts, correct, accuracy);
 };
 
-const startTimer = function() {
-  let counter = 20;
-  const timerId = setInterval(() => {
-    printAt(`Seconds Remaining: ${counter}`, 30, stdout.rows - 5);
-    counter--;
-  }, 1 * 1000);
-  setTimeout(() => {
-    clearInterval(timerId);
-  }, 20 * 1000);
-  return timerId;
-};
-
 const getScoreCalculator = function() {
   const questions = getQuestions("./data/.questions.json");
   let currQsNo = -1;
   let correctAns = 0;
   let skippedQs = 0;
-  return function(pressedKey) {
+  return function(pressedKey, timer) {
     const isFirstCall = currQsNo == -1;
     if (!isFirstCall && pressedKey == "\r") skippedQs++;
     if (!isFirstCall && pressedKey == questions[currQsNo].answer) correctAns++;
-    //f (!isFirstCall) clearInterval(timerId);
+    if (!isFirstCall) timer.stop();
     if (currQsNo == 9) {
       declareScoreAndExit(skippedQs, correctAns);
       process.exit(0);
     }
     currQsNo++;
     showQuestion(questions[currQsNo], currQsNo + 1);
-    //const timerId = startTimer();
+    timer.start();
   };
 };
 
-const handleEachKeyPress = function(calculateScore, pressedKey) {
+const handleEachKeyPress = function(calculateScore, timer, pressedKey) {
   let validKeys = "a,b,c,d,\r".split(",");
   if (validKeys.includes(pressedKey.toLowerCase())) {
-    calculateScore(pressedKey.toLowerCase());
+    calculateScore(pressedKey.toLowerCase(), timer);
   }
 };
 
@@ -112,8 +119,9 @@ const showOpenig = function() {
 const runQuiz = function() {
   showOpenig();
   const calculateScore = getScoreCalculator();
+  const timer = getTimer();
   stdin.setRawMode(true);
-  stdin.on("data", handleEachKeyPress.bind(null, calculateScore));
+  stdin.on("data", handleEachKeyPress.bind(null, calculateScore, timer));
 };
 
 runQuiz();
