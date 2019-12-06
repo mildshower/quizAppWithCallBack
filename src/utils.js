@@ -1,10 +1,6 @@
 const { stdin, stdout } = process;
 const chalk = require("chalk");
 
-const spaces = function(num) {
-  return " ".repeat(num >= 0 ? num : 0);
-};
-
 const printAt = function(str, xCoOrdinate, yCoOrdinate) {
   stdout.cursorTo(xCoOrdinate, yCoOrdinate);
   stdout.clearLine(0);
@@ -16,9 +12,17 @@ const clearScreen = function() {
   stdout.clearScreenDown();
 };
 
-const getTimer = function() {
+const showCursor = function() {
+  stdout.write("\x1B[?25h");
+};
+
+const hideCursor = function() {
+  stdout.write("\x1B[?25l");
+};
+
+const getTimer = function(count) {
   return {
-    counter: 20,
+    counter: count,
     timerId: 0,
     start: function() {
       this.stop();
@@ -36,4 +40,4 @@ const getTimer = function() {
   };
 };
 
-module.exports = { spaces, printAt, clearScreen, getTimer };
+module.exports = { printAt, clearScreen, getTimer, showCursor, hideCursor };

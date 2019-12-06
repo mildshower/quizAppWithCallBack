@@ -1,8 +1,41 @@
-const { stdin, stdout } = process;
+const { stdout } = process;
 const chalk = require("chalk");
-const { intervalCall, spaces, printAt, clearScreen } = require("./utils.js");
+const { printAt, clearScreen } = require("./utils.js");
 const { Say } = require("say");
 const say = new Say();
+
+const show3 = function(row, column) {
+  say.speak("three", "Samantha");
+  printAt(chalk.redBright.bold("||||||||"), column, row++);
+  printAt(chalk.redBright.bold("     |||"), column, row++);
+  printAt(chalk.redBright.bold("     |||"), column, row++);
+  printAt(chalk.redBright.bold(" |||||||"), column, row++);
+  printAt(chalk.redBright.bold("     |||"), column, row++);
+  printAt(chalk.redBright.bold("     |||"), column, row++);
+  printAt(chalk.redBright.bold("||||||||"), column, row++);
+};
+
+const show2 = function(row, column) {
+  say.speak("two", "Samantha");
+  printAt(chalk.yellowBright.bold("||||||||"), column, row++);
+  printAt(chalk.yellowBright.bold("||   ///"), column, row++);
+  printAt(chalk.yellowBright.bold("    /// "), column, row++);
+  printAt(chalk.yellowBright.bold("   ///  "), column, row++);
+  printAt(chalk.yellowBright.bold("  ///   "), column, row++);
+  printAt(chalk.yellowBright.bold(" ///    "), column, row++);
+  printAt(chalk.yellowBright.bold("||||||||"), column, row++);
+};
+
+const show1 = function(row, column) {
+  say.speak("one", "Samantha");
+  printAt(chalk.greenBright.bold("///|||  "), column, row++);
+  printAt(chalk.greenBright.bold("   |||  "), column, row++);
+  printAt(chalk.greenBright.bold("   |||  "), column, row++);
+  printAt(chalk.greenBright.bold("   |||  "), column, row++);
+  printAt(chalk.greenBright.bold("   |||  "), column, row++);
+  printAt(chalk.greenBright.bold("   |||  "), column, row++);
+  printAt(chalk.greenBright.bold("||||||||"), column, row++);
+};
 
 const startCountDown = function(startColumn, startRow) {
   const digitDisplayerFuncs = [show3, show2, show1];
@@ -59,39 +92,6 @@ const showIcon = function(startColumn, startRow) {
     startColumn,
     startRow + 5
   );
-};
-
-const show3 = function(row, column) {
-  say.speak("three", "Samantha");
-  printAt(chalk.redBright.bold("||||||||"), column, row++);
-  printAt(chalk.redBright.bold("     |||"), column, row++);
-  printAt(chalk.redBright.bold("     |||"), column, row++);
-  printAt(chalk.redBright.bold(" |||||||"), column, row++);
-  printAt(chalk.redBright.bold("     |||"), column, row++);
-  printAt(chalk.redBright.bold("     |||"), column, row++);
-  printAt(chalk.redBright.bold("||||||||"), column, row++);
-};
-
-const show2 = function(row, column) {
-  say.speak("two", "Samantha");
-  printAt(chalk.yellowBright.bold("||||||||"), column, row++);
-  printAt(chalk.yellowBright.bold("||   ///"), column, row++);
-  printAt(chalk.yellowBright.bold("    /// "), column, row++);
-  printAt(chalk.yellowBright.bold("   ///  "), column, row++);
-  printAt(chalk.yellowBright.bold("  ///   "), column, row++);
-  printAt(chalk.yellowBright.bold(" ///    "), column, row++);
-  printAt(chalk.yellowBright.bold("||||||||"), column, row++);
-};
-
-const show1 = function(row, column) {
-  say.speak("one", "Samantha");
-  printAt(chalk.greenBright.bold("///|||  "), column, row++);
-  printAt(chalk.greenBright.bold("   |||  "), column, row++);
-  printAt(chalk.greenBright.bold("   |||  "), column, row++);
-  printAt(chalk.greenBright.bold("   |||  "), column, row++);
-  printAt(chalk.greenBright.bold("   |||  "), column, row++);
-  printAt(chalk.greenBright.bold("   |||  "), column, row++);
-  printAt(chalk.greenBright.bold("||||||||"), column, row++);
 };
 
 const runOpeningAnimation = function() {

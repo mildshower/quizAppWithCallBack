@@ -1,7 +1,7 @@
 const { stdin } = process;
 const { readFileSync } = require("fs");
 const { startBorderAnimation } = require("./design");
-const { getTimer } = require("./utils");
+const { getTimer, showCursor, hideCursor } = require("./utils");
 const { getQuestions } = require("./getQuestions");
 const { runOpeningAnimation } = require("./startingAnimations");
 const {
@@ -29,9 +29,10 @@ const getScoreCalculator = function() {
     const isFirstCall = currQsNo == -1;
     if (!isFirstCall && pressedKey == "\r") skippedQs++;
     if (!isFirstCall && pressedKey == questions[currQsNo].answer) correctAns++;
-    if (!isFirstCall) timer.stop();
+    timer.stop();
     if (currQsNo == 9) {
       declareScore(skippedQs, correctAns);
+      showCursor();
       process.exit(0);
     }
     currQsNo++;
@@ -50,12 +51,13 @@ const handleEachKeyPress = function(calculateScore, timer, pressedKey) {
 const startQuiz = function() {
   showStartKeyToPress();
   const calculateScore = getScoreCalculator();
-  const timer = getTimer();
+  const timer = getTimer(20);
   stdin.setRawMode(true);
   stdin.on("data", handleEachKeyPress.bind(null, calculateScore, timer));
 };
 
 const startApp = function() {
+  hideCursor();
   startBorderAnimation();
   runOpeningAnimation();
   setTimeout(startQuiz, 5500);
