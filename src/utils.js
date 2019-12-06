@@ -1,4 +1,4 @@
-const { stdin, stdout } = process;
+const { stdout } = process;
 
 const spaces = function(num) {
   return " ".repeat(num >= 0 ? num : 0);

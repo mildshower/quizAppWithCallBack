@@ -21,10 +21,7 @@ const get10Questions = function(questions) {
   return questionIndecies.map(idx => questions[idx]);
 };
 
-const getQuestions = function(
-  path = "./.questions.json",
-  reader = fs.readFileSync
-) {
+const getQuestions = function(path, reader) {
   return get10Questions(JSON.parse(reader(path, "utf8")));
 };
 

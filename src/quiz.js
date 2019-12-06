@@ -1,10 +1,11 @@
 const { stdin, stdout } = process;
+const { readFileSync } = require("fs");
 const { Say } = require("say");
 const chalk = require("chalk");
 const { startBorderAnimation } = require("./design");
 const { printAt, clearScreen } = require("./utils");
 const { getQuestions } = require("./getQuestions");
-const { runOpeningAnimation } = require("./open");
+const { runOpeningAnimation } = require("./startingAnimations");
 
 const say = new Say();
 stdin.setEncoding("utf-8");
@@ -16,11 +17,8 @@ const getTimer = function() {
     start: function() {
       this.stop();
       this.timerId = setInterval(() => {
-        printAt(
-          chalk.blue(`◼︎ Seconds Remaining: ${this.counter}`),
-          20,
-          stdout.rows - 3
-        );
+        const timeMsg = chalk.blue(`◼︎ Seconds Remaining: ${this.counter}`);
+        printAt(timeMsg, 20, stdout.rows - 3);
         if (this.counter == 0) stdin.emit("data", "\r");
         this.counter--;
       }, 1 * 1000);
@@ -85,7 +83,7 @@ const declareScoreAndExit = function(skipped, correct) {
 };
 
 const getScoreCalculator = function() {
-  const questions = getQuestions("./data/.questions.json");
+  const questions = getQuestions("./data/.questions.json", readFileSync);
   let currQsNo = -1;
   let correctAns = 0;
   let skippedQs = 0;
@@ -113,9 +111,9 @@ const handleEachKeyPress = function(calculateScore, timer, pressedKey) {
 
 const showStartKeyToPress = function() {
   clearScreen();
-  const initiationMsg = "press enter to start";
+  const initiationMsg = "PRESS ENTER TO START";
   printAt(
-    initiationMsg,
+    chalk.redBright.bold(initiationMsg),
     Math.round(stdout.columns / 2 - 10),
     Math.round(stdout.rows / 2)
   );
