@@ -1,1 +1,7 @@
-console.log("Welcome to Quiz App.");
+const { startApp } = require("./src/quizMaster");
+
+const main = function() {
+  startApp();
+};
+
+main();
